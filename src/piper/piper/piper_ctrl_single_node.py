@@ -156,7 +156,7 @@ class C_PiperRosNode(Node):
         vel_0:float = motor_states.motor_1.motor_speed/1000
         vel_1:float = motor_states.motor_2.motor_speed/1000
         vel_2:float = motor_states.motor_3.motor_speed/1000
-        vel_3:float = motor_states.motor_4.motor_speed/1000
+        vel_3:float = -motor_states.motor_4.motor_speed/1000
         vel_4:float = motor_states.motor_5.motor_speed/1000
         vel_5:float = motor_states.motor_6.motor_speed/1000
         effort_6:float = gripper_state.grippers_effort/1000
