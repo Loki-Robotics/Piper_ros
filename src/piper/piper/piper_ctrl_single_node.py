@@ -40,7 +40,7 @@ class C_PiperRosNode(Node):
         self.get_logger().info(f"girpper_exist is {self.girpper_exist}")
         self.get_logger().info(f"rviz_ctrl_flag is {self.rviz_ctrl_flag}")
         # Publisher
-        self.joint_pub = self.create_publisher(JointState, 'joint_states_single', 10)
+        self.joint_pub = self.create_publisher(JointState, '/joint_states', 10)
         self.arm_status_pub = self.create_publisher(PiperStatusMsg, 'arm_status', 10)
         self.end_pose_pub = self.create_publisher(Pose, 'end_pose', 10)
         # service
@@ -253,7 +253,7 @@ class C_PiperRosNode(Node):
                     vel_all = round(joint_data.velocity[6])
                     if (vel_all > 100): vel_all = 100
                     if (vel_all < 0): vel_all = 0
-                    self.get_logger().info(f"vel_all: {vel_all}")
+                    # self.get_logger().info(f"vel_all: {vel_all}")
                     self.piper.MotionCtrl_2(0x01, 0x01, vel_all)
                 # elif(lens == 7):
                 #     # 遍历速度列表
@@ -271,7 +271,7 @@ class C_PiperRosNode(Node):
                     gripper_effort = joint_data.effort[6]
                     if (gripper_effort > 3): gripper_effort = 3
                     if (gripper_effort < 0.5): gripper_effort = 0.5
-                    self.get_logger().info(f"gripper_effort: {gripper_effort}")
+                    # self.get_logger().info(f"gripper_effort: {gripper_effort}")
                     gripper_effort = round(gripper_effort*1000)
                     self.piper.GripperCtrl(abs(joint_6), gripper_effort, 0x01, 0)
                 # 默认1N
