@@ -149,7 +149,7 @@ class C_PiperRosNode(Node):
         joint_2:float = (joint_states.joint_3/1000) * 0.017444
         joint_3:float = -(joint_states.joint_4/1000) * 0.017444
         joint_4:float = (joint_states.joint_5/1000) * 0.017444
-        joint_5:float = (joint_states.joint_6/1000) * 0.017444
+        joint_5:float = -(joint_states.joint_6/1000) * 0.017444
         gripper_state = self.piper.GetArmGripperMsgs().gripper_state
         joint_6:float = gripper_state.grippers_angle/1000000
         motor_states = self.piper.GetArmHighSpdInfoMsgs()
@@ -158,7 +158,7 @@ class C_PiperRosNode(Node):
         vel_2:float = motor_states.motor_3.motor_speed/1000
         vel_3:float = -motor_states.motor_4.motor_speed/1000
         vel_4:float = motor_states.motor_5.motor_speed/1000
-        vel_5:float = motor_states.motor_6.motor_speed/1000
+        vel_5:float = -motor_states.motor_6.motor_speed/1000
         effort_6:float = gripper_state.grippers_effort/1000
         self.joint_states.position = [joint_0,joint_1, joint_2, joint_3, joint_4, joint_5,joint_6]  # Example values
         self.joint_states.velocity = [vel_0, vel_1, vel_2, vel_3, vel_4, vel_5, 0.0]  # Example values
