@@ -398,6 +398,14 @@
       velocity="1" />
   </joint>
 
+  <link name="link_ik"/>
+
+  <joint name="joint_ik" type="fixed">
+      <parent link="link6"/>
+      <child link="link_ik"/>
+      <origin xyz="0 0 0.13503" rpy="1.5708 0 1.5708"/>
+  </joint>
+
   <link
     name="link7">
     <inertial>
