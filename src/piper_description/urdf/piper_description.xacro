@@ -3,11 +3,11 @@
   name="arm"
   xmlns:xacro="http://ros.org/wiki/xacro">
 <!-- world -->
-  <link name="world"/>
+  <!-- <link name="world"/>
   <joint name="fixed_base_joint" type="fixed">
       <parent link="world"/>
       <child link="base_link"/>
-  </joint>
+  </joint> -->
 <!-- arm -->
   <link
     name="base_link">
@@ -396,6 +396,13 @@
       upper="3.14"
       effort="100"
       velocity="1" />
+  </joint>
+
+  <link name="link_ik"/>
+  <joint name="joint_ik" type="fixed">
+      <parent link="link6"/>
+      <child link="link_ik"/>
+      <origin xyz="0 0 0.13503" rpy="1.5708 0 1.5708"/>
   </joint>
 
   <link

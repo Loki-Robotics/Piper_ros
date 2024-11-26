@@ -40,14 +40,14 @@ class C_PiperRosNode(Node):
         self.get_logger().info(f"girpper_exist is {self.girpper_exist}")
         self.get_logger().info(f"rviz_ctrl_flag is {self.rviz_ctrl_flag}")
         # Publisher
-        self.joint_pub = self.create_publisher(JointState, 'joint_states_single', 10)
+        self.joint_pub = self.create_publisher(JointState, 'joint_states', 10)
         self.arm_status_pub = self.create_publisher(PiperStatusMsg, 'arm_status', 10)
         self.end_pose_pub = self.create_publisher(Pose, 'end_pose', 10)
         # service
         self.motor_srv = self.create_service(Enable, 'enable_srv', self.handle_enable_service)
         # joint
         self.joint_states = JointState()
-        self.joint_states.name = ['joint0', 'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
+        self.joint_states.name = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7']
         self.joint_states.position = [0.0] * 7
         self.joint_states.velocity = [0.0] * 7
         self.joint_states.effort = [0.0] * 7
@@ -149,7 +149,7 @@ class C_PiperRosNode(Node):
         joint_3:float = (self.piper.GetArmJointMsgs().joint_state.joint_4/1000) * 0.017444
         joint_4:float = (self.piper.GetArmJointMsgs().joint_state.joint_5/1000) * 0.017444
         joint_5:float = (self.piper.GetArmJointMsgs().joint_state.joint_6/1000) * 0.017444
-        joint_6:float = self.piper.GetArmGripperMsgs().gripper_state.grippers_angle/1000000
+        joint_6:float = -self.piper.GetArmGripperMsgs().gripper_state.grippers_angle/1000000
         vel_0:float = self.piper.GetArmHighSpdInfoMsgs().motor_1.motor_speed/1000
         vel_1:float = self.piper.GetArmHighSpdInfoMsgs().motor_2.motor_speed/1000
         vel_2:float = self.piper.GetArmHighSpdInfoMsgs().motor_3.motor_speed/1000
