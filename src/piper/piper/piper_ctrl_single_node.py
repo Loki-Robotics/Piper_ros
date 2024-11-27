@@ -109,9 +109,9 @@ class C_PiperRosNode(Node):
                 print("程序自动使能超时,退出程序")
                 exit(0)
             
-            self.PublishArmState()
+            # self.PublishArmState()
             self.PublishArmJointAndGirpper()
-            self.PubilsArmEndPose()
+            # self.PubilsArmEndPose()
             
             rate.sleep()
 
@@ -143,20 +143,23 @@ class C_PiperRosNode(Node):
         self.joint_states.header.stamp = self.get_clock().now().to_msg()
         # Here, you can set the joint positions to any value you want
         # 由于获取的原始数据是度为单位扩大了1000倍，因此要转为弧度需要先除以1000，再乘3.14/180，然后限制小数点位数为5位
-        joint_0:float = (self.piper.GetArmJointMsgs().joint_state.joint_1/1000) * 0.017444
-        joint_1:float = (self.piper.GetArmJointMsgs().joint_state.joint_2/1000) * 0.017444
-        joint_2:float = (self.piper.GetArmJointMsgs().joint_state.joint_3/1000) * 0.017444
-        joint_3:float = (self.piper.GetArmJointMsgs().joint_state.joint_4/1000) * 0.017444
-        joint_4:float = (self.piper.GetArmJointMsgs().joint_state.joint_5/1000) * 0.017444
-        joint_5:float = (self.piper.GetArmJointMsgs().joint_state.joint_6/1000) * 0.017444
-        joint_6:float = -self.piper.GetArmGripperMsgs().gripper_state.grippers_angle/1000000
-        vel_0:float = self.piper.GetArmHighSpdInfoMsgs().motor_1.motor_speed/1000
-        vel_1:float = self.piper.GetArmHighSpdInfoMsgs().motor_2.motor_speed/1000
-        vel_2:float = self.piper.GetArmHighSpdInfoMsgs().motor_3.motor_speed/1000
-        vel_3:float = self.piper.GetArmHighSpdInfoMsgs().motor_4.motor_speed/1000
-        vel_4:float = self.piper.GetArmHighSpdInfoMsgs().motor_5.motor_speed/1000
-        vel_5:float = self.piper.GetArmHighSpdInfoMsgs().motor_6.motor_speed/1000
-        effort_6:float = self.piper.GetArmGripperMsgs().gripper_state.grippers_effort/1000
+        joint_state = self.piper.GetArmJointMsgs().joint_state
+        gripper_state = self.piper.GetArmGripperMsgs().gripper_state
+        joint_0:float = (joint_state.joint_1/1000) * 0.017444
+        joint_1:float = (joint_state.joint_2/1000) * 0.017444
+        joint_2:float = (joint_state.joint_3/1000) * 0.017444
+        joint_3:float = -(joint_state.joint_4/1000) * 0.017444
+        joint_4:float = (joint_state.joint_5/1000) * 0.017444
+        joint_5:float = -(joint_state.joint_6/1000) * 0.017444
+        joint_6:float = -gripper_state.grippers_angle/1000000
+        joint_vel = self.piper.GetArmHighSpdInfoMsgs()
+        vel_0:float = joint_vel.motor_1.motor_speed/1000
+        vel_1:float = joint_vel.motor_2.motor_speed/1000
+        vel_2:float = joint_vel.motor_3.motor_speed/1000
+        vel_3:float = -joint_vel.motor_4.motor_speed/1000
+        vel_4:float = joint_vel.motor_5.motor_speed/1000
+        vel_5:float = -joint_vel.motor_6.motor_speed/1000
+        effort_6:float = gripper_state.grippers_effort/1000
         self.joint_states.position = [joint_0,joint_1, joint_2, joint_3, joint_4, joint_5,joint_6]  # Example values
         self.joint_states.velocity = [vel_0, vel_1, vel_2, vel_3, vel_4, vel_5, 0.0]  # Example values
         self.joint_states.effort = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, effort_6]
@@ -220,14 +223,14 @@ class C_PiperRosNode(Node):
         """
         factor = 57324.840764 #1000*180/3.14
         factor1 = 57.32484
-        self.get_logger().info(f"Received Joint States:")
-        self.get_logger().info(f"joint_0: {joint_data.position[0]}")
-        self.get_logger().info(f"joint_1: {joint_data.position[1]}")
-        self.get_logger().info(f"joint_2: {joint_data.position[2]}")
-        self.get_logger().info(f"joint_3: {joint_data.position[3]}")
-        self.get_logger().info(f"joint_4: {joint_data.position[4]}")
-        self.get_logger().info(f"joint_5: {joint_data.position[5]}")
-        self.get_logger().info(f"joint_6: {joint_data.position[6]}")
+        # self.get_logger().info(f"Received Joint States:")
+        # self.get_logger().info(f"joint_0: {joint_data.position[0]}")
+        # self.get_logger().info(f"joint_1: {joint_data.position[1]}")
+        # self.get_logger().info(f"joint_2: {joint_data.position[2]}")
+        # self.get_logger().info(f"joint_3: {joint_data.position[3]}")
+        # self.get_logger().info(f"joint_4: {joint_data.position[4]}")
+        # self.get_logger().info(f"joint_5: {joint_data.position[5]}")
+        # self.get_logger().info(f"joint_6: {joint_data.position[6]}")
         joint_0 = round(joint_data.position[0]*factor)
         joint_1 = round(joint_data.position[1]*factor)
         joint_2 = round(joint_data.position[2]*factor)
@@ -250,7 +253,7 @@ class C_PiperRosNode(Node):
                     vel_all = round(joint_data.velocity[6])
                     if (vel_all > 100): vel_all = 100
                     if (vel_all < 0): vel_all = 0
-                    self.get_logger().info(f"vel_all: {vel_all}")
+                    # self.get_logger().info(f"vel_all: {vel_all}")
                     self.piper.MotionCtrl_2(0x01, 0x01, vel_all)
                 # elif(lens == 7):
                 #     # 遍历速度列表
@@ -268,7 +271,7 @@ class C_PiperRosNode(Node):
                     gripper_effort = joint_data.effort[6]
                     if (gripper_effort > 3): gripper_effort = 3
                     if (gripper_effort < 0.5): gripper_effort = 0.5
-                    self.get_logger().info(f"gripper_effort: {gripper_effort}")
+                    # self.get_logger().info(f"gripper_effort: {gripper_effort}")
                     gripper_effort = round(gripper_effort*1000)
                     self.piper.GripperCtrl(abs(joint_6), gripper_effort, 0x01, 0)
                 # 默认1N
