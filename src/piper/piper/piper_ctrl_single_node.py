@@ -109,33 +109,34 @@ class C_PiperRosNode(Node):
                 print("程序自动使能超时,退出程序")
                 exit(0)
             
-            # self.PublishArmState()
             self.PublishArmJointAndGirpper()
+            self.PublishArmState()
             # self.PubilsArmEndPose()
             
             rate.sleep()
 
     def PublishArmState(self):
         arm_status = PiperStatusMsg()
-        arm_status.ctrl_mode = self.piper.GetArmStatus().arm_status.ctrl_mode
-        arm_status.arm_status = self.piper.GetArmStatus().arm_status.arm_status
-        arm_status.mode_feedback = self.piper.GetArmStatus().arm_status.mode_feed
-        arm_status.teach_status = self.piper.GetArmStatus().arm_status.teach_status
-        arm_status.motion_status = self.piper.GetArmStatus().arm_status.motion_status
-        arm_status.trajectory_num = self.piper.GetArmStatus().arm_status.trajectory_num
-        arm_status.err_code = self.piper.GetArmStatus().arm_status.err_code
-        arm_status.joint_1_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_1_angle_limit
-        arm_status.joint_2_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_2_angle_limit
-        arm_status.joint_3_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_3_angle_limit
-        arm_status.joint_4_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_4_angle_limit
-        arm_status.joint_5_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_5_angle_limit
-        arm_status.joint_6_angle_limit = self.piper.GetArmStatus().arm_status.err_status.joint_6_angle_limit
-        arm_status.communication_status_joint_1 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_1
-        arm_status.communication_status_joint_2 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_2
-        arm_status.communication_status_joint_3 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_3
-        arm_status.communication_status_joint_4 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_4
-        arm_status.communication_status_joint_5 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_5
-        arm_status.communication_status_joint_6 = self.piper.GetArmStatus().arm_status.err_status.communication_status_joint_6
+        arm_status_sdk = self.piper.GetArmStatus().arm_status
+        arm_status.ctrl_mode = arm_status_sdk.ctrl_mode
+        arm_status.arm_status = arm_status_sdk.arm_status
+        arm_status.mode_feedback = arm_status_sdk.mode_feed
+        arm_status.teach_status = arm_status_sdk.teach_status
+        arm_status.motion_status = arm_status_sdk.motion_status
+        arm_status.trajectory_num = arm_status_sdk.trajectory_num
+        arm_status.err_code = arm_status_sdk.err_code
+        arm_status.joint_1_angle_limit = arm_status_sdk.err_status.joint_1_angle_limit
+        arm_status.joint_2_angle_limit = arm_status_sdk.err_status.joint_2_angle_limit
+        arm_status.joint_3_angle_limit = arm_status_sdk.err_status.joint_3_angle_limit
+        arm_status.joint_4_angle_limit = arm_status_sdk.err_status.joint_4_angle_limit
+        arm_status.joint_5_angle_limit = arm_status_sdk.err_status.joint_5_angle_limit
+        arm_status.joint_6_angle_limit = arm_status_sdk.err_status.joint_6_angle_limit
+        arm_status.communication_status_joint_1 = arm_status_sdk.err_status.communication_status_joint_1
+        arm_status.communication_status_joint_2 = arm_status_sdk.err_status.communication_status_joint_2
+        arm_status.communication_status_joint_3 = arm_status_sdk.err_status.communication_status_joint_3
+        arm_status.communication_status_joint_4 = arm_status_sdk.err_status.communication_status_joint_4
+        arm_status.communication_status_joint_5 = arm_status_sdk.err_status.communication_status_joint_5
+        arm_status.communication_status_joint_6 = arm_status_sdk.err_status.communication_status_joint_6
         self.arm_status_pub.publish(arm_status)
     
     def PublishArmJointAndGirpper(self):
