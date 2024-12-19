@@ -405,6 +405,13 @@
       <origin xyz="0 0 0.13503" rpy="1.5708 0 1.5708"/>
   </joint>
 
+  <link name="link_ik_umi"/>
+  <joint name="joint_ik_umi" type="fixed">
+      <parent link="link_ik"/>
+      <child link="link_ik_umi"/>
+      <origin xyz="0 0 0" rpy="0 3.1415 0"/>
+  </joint>
+
   <link
     name="link7">
     <inertial>
