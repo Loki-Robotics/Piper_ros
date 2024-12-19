@@ -47,10 +47,10 @@ class C_PiperRosNode(Node):
         self.motor_srv = self.create_service(Enable, 'enable_srv', self.handle_enable_service)
         # joint
         self.joint_states = JointState()
-        self.joint_states.name = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7']
-        self.joint_states.position = [0.0] * 7
-        self.joint_states.velocity = [0.0] * 7
-        self.joint_states.effort = [0.0] * 7
+        self.joint_states.name = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7', 'joint8']
+        self.joint_states.position = [0.0] * 8
+        self.joint_states.velocity = [0.0] * 8
+        self.joint_states.effort = [0.0] * 8
         # 使能标志位
         self.__enable_flag = False
         # 创建piper类并打开can接口
@@ -161,9 +161,9 @@ class C_PiperRosNode(Node):
         vel_4:float = joint_vel.motor_5.motor_speed/1000
         vel_5:float = -joint_vel.motor_6.motor_speed/1000
         effort_6:float = gripper_state.grippers_effort/1000
-        self.joint_states.position = [joint_0,joint_1, joint_2, joint_3, joint_4, joint_5,joint_6]  # Example values
-        self.joint_states.velocity = [vel_0, vel_1, vel_2, vel_3, vel_4, vel_5, 0.0]  # Example values
-        self.joint_states.effort = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, effort_6]
+        self.joint_states.position = [joint_0,joint_1, joint_2, joint_3, joint_4, joint_5,-joint_6,joint_6]  # Example values
+        self.joint_states.velocity = [vel_0, vel_1, vel_2, vel_3, vel_4, vel_5, 0.0, 0.0]  # Example values
+        self.joint_states.effort = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, effort_6, effort_6]
         self.joint_pub.publish(self.joint_states)
     
     def PubilsArmEndPose(self):
