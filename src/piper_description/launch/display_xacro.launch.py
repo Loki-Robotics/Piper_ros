@@ -31,12 +31,12 @@ def generate_launch_description():
                                      description='Absolute path to rviz config file')
 
     # Joint State Publisher GUI Node
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher_gui',
-        executable='joint_state_publisher_gui',
-        name='joint_state_publisher_gui',
-        output='screen'
-    )
+    # joint_state_publisher_node = Node(
+    #     package='joint_state_publisher_gui',
+    #     executable='joint_state_publisher_gui',
+    #     name='joint_state_publisher_gui',
+    #     output='screen'
+    # )
 
     # Robot State Publisher Node
     robot_state_publisher_node = Node(
@@ -58,7 +58,7 @@ def generate_launch_description():
 
     # Add all actions
     ld.add_action(rviz_arg)
-    ld.add_action(joint_state_publisher_node)
+    # ld.add_action(joint_state_publisher_node)
     ld.add_action(robot_state_publisher_node)
     ld.add_action(rviz2_node)
     

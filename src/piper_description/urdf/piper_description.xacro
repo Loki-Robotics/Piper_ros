@@ -16,14 +16,14 @@
         xyz="-0.00973928490005031 1.8312708928633E-06 0.0410140167677137"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.162548567403693" />
       <inertia
-        ixx="0.000226592553127906"
-        ixy="-7.33974356968813E-08"
-        ixz="2.13221970218123E-06"
-        iyy="0.000269447877479622"
-        iyz="8.15167478685076E-09"
-        izz="0.000222318286704" />
+        ixx="0.000226596924525071"
+        ixy="-7.33972270153965E-08"
+        ixz="2.13249977802622E-06"
+        iyy="0.000269444772561524"
+        iyz="8.15169009611054E-09"
+        izz="0.000222318258878636" />
     </inertial>
     <visual>
       <origin
@@ -56,14 +56,14 @@
         xyz="0.00131676031927021 0.000310288842008364 -0.00922874512303438"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.0978679932242825" />
       <inertia
-        ixx="7.76684558296781E-05"
-        ixy="1.09084650459916E-07"
-        ixz="-1.97480532432411E-06"
-        iyy="9.24967780161546E-05"
-        iyz="9.91284646834672E-07"
-        izz="8.24589062407806E-05" />
+        ixx="7.76684558296782E-05"
+        ixy="1.09084650459924E-07"
+        ixz="-1.9748053243241E-06"
+        iyy="9.24967780161547E-05"
+        iyz="9.91284646834582E-07"
+        izz="8.24589062407807E-05" />
     </inertial>
     <visual>
       <origin
@@ -114,14 +114,14 @@
         xyz="0.147615838821413 -0.0174259998251393 0.00175952516190707"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.290888938633388" />
       <inertia
-        ixx="0.000150112628108228"
-        ixy="8.58974959950769E-05"
-        ixz="-1.07428153464285E-06"
-        iyy="0.00172585302855383"
-        iyz="-9.93704792239686E-07"
-        izz="0.00177445942914759" />
+        ixx="0.000148959640166183"
+        ixy="-7.37750384371657E-05"
+        ixz="-9.68688405196236E-07"
+        iyy="0.00172800946632652"
+        iyz="-1.09692225564224E-06"
+        izz="0.0017754628344594" />
     </inertial>
     <visual>
       <origin
@@ -172,14 +172,14 @@
         xyz="0.0156727246030052 0.104466514905741 0.000508486764144372"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.290847697793211" />
       <inertia
-        ixx="0.000221686352136266"
-        ixy="-7.57426543992343E-06"
-        ixz="-6.3700062772173E-07"
-        iyy="0.000100859162015934"
-        iyz="-8.16202696860781E-07"
-        izz="0.000241839316548946" />
+        ixx="0.000107879011637167"
+        ixy="2.92669521203626E-05"
+        ixz="6.825922326238E-07"
+        iyy="0.000214751671792086"
+        iyz="-7.78469047878196E-07"
+        izz="0.000241923439340319" />
     </inertial>
     <visual>
       <origin
@@ -230,14 +230,14 @@
         xyz="0.000276464622388145 -0.00102803669324853 -0.00472830700561612"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.127087348341362" />
       <inertia
-        ixx="3.82011730423098E-05"
-        ixy="-4.92358351033589E-08"
-        ixz="4.89589432983109E-08"
-        iyy="4.87048555222491E-05"
-        iyz="6.70802942486707E-08"
-        izz="4.10592077565155E-05" />
+        ixx="3.82011730423416E-05"
+        ixy="-4.92358350897513E-08"
+        ixz="4.89589432973119E-08"
+        iyy="4.87048555222578E-05"
+        iyz="6.70802942500512E-08"
+        izz="4.10592077565559E-05" />
     </inertial>
     <visual>
       <origin
@@ -288,14 +288,14 @@
         xyz="8.82261259100015E-05 0.056682908434204 -0.00196119077436732"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.144711242639457" />
       <inertia
-        ixx="4.39644269159173E-05"
-        ixy="-3.59214840853815E-08"
-        ixz="-1.89785003257649E-08"
-        iyy="5.63173857792457E-05"
-        iyz="-2.15407623722543E-07"
-        izz="4.88713595021005E-05" />
+        ixx="4.39644313662493E-05"
+        ixy="-3.59259686444846E-08"
+        ixz="-1.89747741386183E-08"
+        iyy="5.63173920951307E-05"
+        iyz="-2.1540716689785E-07"
+        izz="4.88713664675268E-05" />
     </inertial>
     <visual>
       <origin
@@ -346,14 +346,14 @@
         xyz="9.41121070072333E-09 0.000341209775988838 0.0342122921883722"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.195187143240719" />
       <inertia
-        ixx="4.31750564711759E-05"
-        ixy="-2.21295720427027E-08"
-        ixz="-3.27825836857102E-12"
-        iyy="9.99756357365307E-05"
-        iyz="1.10337380549335E-07"
-        izz="0.000118282295533688" />
+        ixx="6.43790256535539E-05"
+        ixy="-1.2366166157046E-06"
+        ixz="1.97664606328472E-07"
+        iyy="0.000126146396374301"
+        iyz="2.41157078516408E-06"
+        izz="0.000154087076816444" />
     </inertial>
     <visual>
       <origin
@@ -379,7 +379,73 @@
       </geometry>
     </collision>
   </link>
+
+  <!-- FT Sensor -->
+  <link name="link5_ft_sensor_adapter"/>
   <joint
+    name="joint6"
+    type="revolute">
+    <!-- <origin
+      xyz="0 0.091 0.0014165"
+      rpy="-1.5708 -1.5708 0" /> -->
+    <!-- NOTE the rpy y value is changed to the calibration offset -->
+    <origin
+      xyz="0 0.091 0.0014165"
+      rpy="-1.5708 0.18 0" />
+    <!-- <parent
+      link="link5" /> -->
+    <parent
+      link="link5" />
+    <!-- <child
+      link="link6" /> -->
+    <child
+      link="link5_ft_sensor_adapter" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="3" />
+  </joint>
+  <xacro:arg name="prefix" default="ft_sensor0"/>
+  <xacro:include filename="$(find rokubimini_description)/urdf/BFT_SENS_SER_M8.urdf.xacro" />
+  <xacro:BFT_SENS_SER_M8 prefix="$(arg prefix)" />
+  <joint name="joint_ft_sensor" type="fixed">
+    <parent link="link5_ft_sensor_adapter" />
+    <child link = "$(arg prefix)_mounting" />
+    <origin xyz="0 0 0.01" rpy="0 0 0" />
+  </joint>
+  <link name="ft_sensor_link6_adapter"/>
+  <joint name="joint_ft_sensor_wrench_spacer" type="fixed">
+    <parent link="$(arg prefix)_wrench"/>
+    <child link="ft_sensor_link6_adapter"/>
+    <origin xyz="0 0 0.008" rpy="0 0 0"/>
+  </joint>
+  <!-- Tool COG link for FT sensor calibration -->
+  <link name="link_tool_cog">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <!-- Inertia is fake but not necessary -->
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="joint_tool_cog" type="fixed">
+    <parent link="ft_sensor_link6_adapter"/>
+    <child link="link_tool_cog"/>
+    <origin xyz="0 0 0.03" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint_ft_sensor_link6" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    <parent link="ft_sensor_link6_adapter" />
+    <child link="link6" />
+  </joint>
+  <!-- End FT Sensor -->
+
+  <!-- Uncomment if removing FT sensor -->
+  <!-- <joint
     name="joint6"
     type="revolute">
     <origin
@@ -396,7 +462,7 @@
       upper="3.14"
       effort="100"
       velocity="3" />
-  </joint>
+  </joint> -->
 
   <link name="link_ik"/>
   <joint name="joint_ik" type="fixed">
@@ -426,14 +492,14 @@
         xyz="-0.000277795893713934 -0.046767350270289 -0.00921029791141448"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.02648229234527" />
       <inertia
-        ixx="9.99782519244544E-06"
-        ixy="-1.57547595978589E-07"
-        ixz="-2.71355785017816E-08"
-        iyy="6.17952364356547E-06"
-        iyz="-1.58939504838734E-06"
-        izz="1.42102253390315E-05" />
+        ixx="9.99787479924589E-06"
+        ixy="-1.57548495096104E-07"
+        ixz="-2.71342775003487E-08"
+        iyy="6.1795212293655E-06"
+        iyz="-1.58939803580081E-06"
+        izz="1.42102717246564E-05" />
     </inertial>
     <visual>
       <origin
@@ -485,14 +551,14 @@
         xyz="0.000277795911672651 0.0467673513153836 -0.00921029799058583"
         rpy="0 0 0" />
       <mass
-        value="0.00001" />
+        value="0.0264822021416248" />
       <inertia
-        ixx="9.99782474142963E-06"
-        ixy="-1.57547666236405E-07"
-        ixz="2.71355834243046E-08"
-        iyy="6.17952362333486E-06"
-        iyz="1.58939503259658E-06"
-        izz="1.42102248648757E-05" />
+        ixx="9.99779119357223E-06"
+        ixy="-1.57542283433504E-07"
+        ixz="2.71367446701359E-08"
+        iyy="6.17952441557932E-06"
+        iyz="1.58939319453383E-06"
+        izz="1.4210192754512E-05" />
     </inertial>
     <visual>
       <origin
