@@ -381,23 +381,16 @@
   </link>
 
   <!-- FT Sensor -->
+  <!-- NOTE the rpy y value is changed to the calibration offset -->
   <link name="link5_ft_sensor_adapter"/>
   <joint
     name="joint6"
     type="revolute">
-    <!-- <origin
-      xyz="0 0.091 0.0014165"
-      rpy="-1.5708 -1.5708 0" /> -->
-    <!-- NOTE the rpy y value is changed to the calibration offset -->
     <origin
       xyz="0 0.091 0.0014165"
       rpy="-1.5708 0.18 0" />
-    <!-- <parent
-      link="link5" /> -->
     <parent
       link="link5" />
-    <!-- <child
-      link="link6" /> -->
     <child
       link="link5_ft_sensor_adapter" />
     <axis
@@ -420,14 +413,12 @@
   <joint name="joint_ft_sensor_wrench_spacer" type="fixed">
     <parent link="$(arg prefix)_wrench"/>
     <child link="ft_sensor_link6_adapter"/>
-    <origin xyz="0 0 0.008" rpy="0 0 0"/>
+    <origin xyz="0 0 0.008" rpy="0 0 3.14"/>
   </joint>
-  <!-- Tool COG link for FT sensor calibration -->
   <link name="link_tool_cog">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.5"/>
-      <!-- Inertia is fake but not necessary -->
+      <mass value="0.05"/>
       <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
     </inertial>
   </link>
@@ -469,13 +460,6 @@
       <parent link="link6"/>
       <child link="link_ik"/>
       <origin xyz="0 0 0.13503" rpy="1.5708 0 1.5708"/>
-  </joint>
-
-  <link name="link_ik_umi"/>
-  <joint name="joint_ik_umi" type="fixed">
-      <parent link="link_ik"/>
-      <child link="link_ik_umi"/>
-      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
   </joint>
 
   <link name="link_ik_spinning"/>
