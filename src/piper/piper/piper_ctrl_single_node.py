@@ -71,7 +71,7 @@ class C_PiperRosNode(Node):
     def publish_thread(self):
         """机械臂消息发布
         """
-        rate = self.create_rate(200)  # 200 Hz
+        rate = self.create_rate(300)  # Hz
         enable_flag = False
         # 设置超时时间（秒）
         timeout = 5
