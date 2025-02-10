@@ -5,7 +5,7 @@ project(piper_description)
 find_package(ament_cmake REQUIRED)
 
 # 安装文件夹
-install(DIRECTORY config launch meshes urdf rviz
+install(DIRECTORY config launch meshes urdf rviz meshes_new
   DESTINATION share/${PROJECT_NAME}/
 )
 

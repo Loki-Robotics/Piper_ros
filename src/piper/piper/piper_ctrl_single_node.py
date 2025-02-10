@@ -149,17 +149,17 @@ class C_PiperRosNode(Node):
         joint_0:float = (joint_state.joint_1/1000) * 0.017444
         joint_1:float = (joint_state.joint_2/1000) * 0.017444
         joint_2:float = (joint_state.joint_3/1000) * 0.017444
-        joint_3:float = -(joint_state.joint_4/1000) * 0.017444
+        joint_3:float = (joint_state.joint_4/1000) * 0.017444
         joint_4:float = (joint_state.joint_5/1000) * 0.017444
-        joint_5:float = -(joint_state.joint_6/1000) * 0.017444
+        joint_5:float = (joint_state.joint_6/1000) * 0.017444
         joint_6:float = -gripper_state.grippers_angle/1000000
         joint_vel = self.piper.GetArmHighSpdInfoMsgs()
         vel_0:float = joint_vel.motor_1.motor_speed/1000
         vel_1:float = joint_vel.motor_2.motor_speed/1000
         vel_2:float = joint_vel.motor_3.motor_speed/1000
-        vel_3:float = -joint_vel.motor_4.motor_speed/1000
+        vel_3:float = joint_vel.motor_4.motor_speed/1000
         vel_4:float = joint_vel.motor_5.motor_speed/1000
-        vel_5:float = -joint_vel.motor_6.motor_speed/1000
+        vel_5:float = joint_vel.motor_6.motor_speed/1000
         effort_6:float = gripper_state.grippers_effort/1000
         self.joint_states.position = [joint_0,joint_1, joint_2, joint_3, joint_4, joint_5,-joint_6,joint_6]  # Example values
         self.joint_states.velocity = [vel_0, vel_1, vel_2, vel_3, vel_4, vel_5, 0.0, 0.0]  # Example values
@@ -235,9 +235,9 @@ class C_PiperRosNode(Node):
         joint_0 = round(joint_data.position[0]*factor)
         joint_1 = round(joint_data.position[1]*factor)
         joint_2 = round(joint_data.position[2]*factor)
-        joint_3 = round(-joint_data.position[3]*factor)
+        joint_3 = round(joint_data.position[3]*factor)
         joint_4 = round(joint_data.position[4]*factor)
-        joint_5 = round(-joint_data.position[5]*factor)
+        joint_5 = round(joint_data.position[5]*factor)
         joint_6 = round(joint_data.position[6]*1000*1000)
         if(self.rviz_ctrl_flag):
             joint_6 = joint_6 * 2
