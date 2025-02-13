@@ -390,6 +390,14 @@
       effort="100"
       velocity="3" />
   </joint>
+
+  <link name="link_ik_leader"/>
+  <joint name="joint_ik_leader" type="fixed">
+      <parent link="link6"/>
+      <child link="link_ik_leader"/>
+      <origin xyz="0 0 0.07" rpy="0 0 3.14"/>
+  </joint>
+
   <link
     name="link7">
     <inertial>
